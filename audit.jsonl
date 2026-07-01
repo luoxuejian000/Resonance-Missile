@@ -1,0 +1,39 @@
+{"timestamp": 1782893050.256674, "event_type": "CLIENT_CONNECTED", "source": "knowledge_graph_001", "details": {"clients": ["knowledge_graph_001"]}}
+{"timestamp": 1782893050.308148, "event_type": "MESSAGE_RECEIVED", "source": "knowledge_graph_001", "details": {"msg_id": "56842130-089b-45f3-89cc-73b9ca4b02e0", "type": "register"}}
+{"timestamp": 1782893050.3111966, "event_type": "CLIENT_CONNECTED", "source": "fuzz_test_001", "details": {"clients": ["knowledge_graph_001", "fuzz_test_001"]}}
+{"timestamp": 1782893050.311706, "event_type": "CLIENT_CONNECTED", "source": "verify_001", "details": {"clients": ["knowledge_graph_001", "fuzz_test_001", "verify_001"]}}
+{"timestamp": 1782893050.3127067, "event_type": "CLIENT_CONNECTED", "source": "code_audit_002", "details": {"clients": ["knowledge_graph_001", "fuzz_test_001", "verify_001", "code_audit_002"]}}
+{"timestamp": 1782893050.313742, "event_type": "CLIENT_CONNECTED", "source": "dependency_001", "details": {"clients": ["knowledge_graph_001", "fuzz_test_001", "verify_001", "code_audit_002", "dependency_001"]}}
+{"timestamp": 1782893050.3172, "event_type": "CLIENT_CONNECTED", "source": "code_audit_001", "details": {"clients": ["knowledge_graph_001", "fuzz_test_001", "verify_001", "code_audit_002", "dependency_001", "code_audit_001"]}}
+{"timestamp": 1782893050.3199074, "event_type": "MESSAGE_RECEIVED", "source": "fuzz_test_001", "details": {"msg_id": "b1ca0f51-e34b-4240-aab8-9f123c277c80", "type": "register"}}
+{"timestamp": 1782893050.3214254, "event_type": "MESSAGE_RECEIVED", "source": "verify_001", "details": {"msg_id": "026ae2df-834f-44b2-9b6e-23b58480be39", "type": "register"}}
+{"timestamp": 1782893050.3219376, "event_type": "MESSAGE_RECEIVED", "source": "code_audit_002", "details": {"msg_id": "ab6005bc-1ba5-45bc-8beb-14fa400dff4c", "type": "register"}}
+{"timestamp": 1782893050.3239627, "event_type": "MESSAGE_RECEIVED", "source": "dependency_001", "details": {"msg_id": "71b2ca73-dc53-4d10-93d8-49c38b790707", "type": "register"}}
+{"timestamp": 1782893050.3249898, "event_type": "MESSAGE_RECEIVED", "source": "code_audit_001", "details": {"msg_id": "0d922089-3c28-4e2d-8b23-deaf06fee8a4", "type": "register"}}
+{"timestamp": 1782893097.470974, "event_type": "CLIENT_CONNECTED", "source": "verify_001", "details": {"clients": ["verify_001"]}}
+{"timestamp": 1782893097.4751363, "event_type": "CLIENT_CONNECTED", "source": "code_audit_002", "details": {"clients": ["verify_001", "code_audit_002"]}}
+{"timestamp": 1782893097.4751363, "event_type": "CLIENT_CONNECTED", "source": "code_audit_001", "details": {"clients": ["verify_001", "code_audit_002", "code_audit_001"]}}
+{"timestamp": 1782893097.479709, "event_type": "CLIENT_CONNECTED", "source": "knowledge_graph_001", "details": {"clients": ["verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001"]}}
+{"timestamp": 1782893097.4812155, "event_type": "CLIENT_CONNECTED", "source": "fuzz_test_001", "details": {"clients": ["verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001", "fuzz_test_001"]}}
+{"timestamp": 1782893097.4812155, "event_type": "CLIENT_CONNECTED", "source": "dependency_001", "details": {"clients": ["verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001", "fuzz_test_001", "dependency_001"]}}
+{"timestamp": 1782893097.4882953, "event_type": "MESSAGE_RECEIVED", "source": "verify_001", "details": {"msg_id": "41d799bb-c86d-4b02-8c03-c6592bd252e0", "type": "register"}}
+{"timestamp": 1782893097.489802, "event_type": "MESSAGE_RECEIVED", "source": "code_audit_002", "details": {"msg_id": "871186fc-1dfe-4063-9950-e7e92f099123", "type": "register"}}
+{"timestamp": 1782893097.4918199, "event_type": "MESSAGE_RECEIVED", "source": "code_audit_001", "details": {"msg_id": "da7b6a5a-425b-442d-8bf2-588f4d9f4320", "type": "register"}}
+{"timestamp": 1782893097.493322, "event_type": "MESSAGE_RECEIVED", "source": "knowledge_graph_001", "details": {"msg_id": "8a9882d6-eb8d-4d04-b47a-99f3da641b72", "type": "register"}}
+{"timestamp": 1782893097.4958425, "event_type": "MESSAGE_RECEIVED", "source": "fuzz_test_001", "details": {"msg_id": "6265f87b-5c05-406e-bab2-bd4e276a2f9c", "type": "register"}}
+{"timestamp": 1782893097.4968436, "event_type": "MESSAGE_RECEIVED", "source": "dependency_001", "details": {"msg_id": "be20275a-fa4b-4868-8c9a-4d48268a9582", "type": "register"}}
+{"timestamp": 1782893100.4507184, "event_type": "CLIENT_CONNECTED", "source": "orchestrator", "details": {"clients": ["verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001", "fuzz_test_001", "dependency_001", "orchestrator"]}}
+{"timestamp": 1782893522.45617, "event_type": "CLIENT_CONNECTED", "source": "health_check", "details": {"clients": ["verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001", "fuzz_test_001", "dependency_001", "orchestrator", "health_check"]}}
+{"timestamp": 1782894248.8297894, "event_type": "CLIENT_CONNECTED", "source": "fuzz_test_001", "details": {"clients": ["fuzz_test_001"]}}
+{"timestamp": 1782894248.8484945, "event_type": "CLIENT_CONNECTED", "source": "verify_001", "details": {"clients": ["fuzz_test_001", "verify_001"]}}
+{"timestamp": 1782894248.8500304, "event_type": "CLIENT_CONNECTED", "source": "code_audit_002", "details": {"clients": ["fuzz_test_001", "verify_001", "code_audit_002"]}}
+{"timestamp": 1782894248.8520784, "event_type": "CLIENT_CONNECTED", "source": "code_audit_001", "details": {"clients": ["fuzz_test_001", "verify_001", "code_audit_002", "code_audit_001"]}}
+{"timestamp": 1782894248.8532076, "event_type": "CLIENT_CONNECTED", "source": "knowledge_graph_001", "details": {"clients": ["fuzz_test_001", "verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001"]}}
+{"timestamp": 1782894248.8532076, "event_type": "CLIENT_CONNECTED", "source": "dependency_001", "details": {"clients": ["fuzz_test_001", "verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001", "dependency_001"]}}
+{"timestamp": 1782894248.8574662, "event_type": "MESSAGE_RECEIVED", "source": "fuzz_test_001", "details": {"msg_id": "98f85f85-a3bd-4f5a-ac48-fc087293667f", "type": "register"}}
+{"timestamp": 1782894248.8599756, "event_type": "MESSAGE_RECEIVED", "source": "verify_001", "details": {"msg_id": "83d4606b-d046-4ccb-a31d-7b8e29bfb32f", "type": "register"}}
+{"timestamp": 1782894248.8610122, "event_type": "MESSAGE_RECEIVED", "source": "code_audit_002", "details": {"msg_id": "879a9f9e-e24a-473a-a868-f79fe31fb9d7", "type": "register"}}
+{"timestamp": 1782894248.8625185, "event_type": "MESSAGE_RECEIVED", "source": "code_audit_001", "details": {"msg_id": "2680d15e-f30c-40bc-8592-35f36a85fdbd", "type": "register"}}
+{"timestamp": 1782894248.8635263, "event_type": "MESSAGE_RECEIVED", "source": "knowledge_graph_001", "details": {"msg_id": "d70c915d-4d34-4600-86e7-68add1470f42", "type": "register"}}
+{"timestamp": 1782894248.8655381, "event_type": "MESSAGE_RECEIVED", "source": "dependency_001", "details": {"msg_id": "c1e3878d-5037-4d14-8279-9b98debd09f4", "type": "register"}}
+{"timestamp": 1782894251.518112, "event_type": "CLIENT_CONNECTED", "source": "orchestrator", "details": {"clients": ["fuzz_test_001", "verify_001", "code_audit_002", "code_audit_001", "knowledge_graph_001", "dependency_001", "orchestrator"]}}

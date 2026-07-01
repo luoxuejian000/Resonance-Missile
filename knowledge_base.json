@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-07-01 15:37:29",
+  "vulnerabilities": {
+    "CVE-2024-12345": {
+      "cve_id": "CVE-2024-12345",
+      "description": "SQL injection vulnerability",
+      "severity": "high",
+      "cvss_score": 8.5,
+      "affected_products": [],
+      "remediation": "",
+      "synced_at": "2026-07-01 15:37:29"
+    }
+  },
+  "attack_patterns": {},
+  "remediations": {}
+}

@@ -1,0 +1,9 @@
+# Resonance-Missile 依赖
+fastapi>=0.100
+uvicorn>=0.20
+pydantic>=2.0
+pydantic-settings>=2.0
+httpx>=0.24
+websockets
+redis>=4.0
+numpy>=1.24
