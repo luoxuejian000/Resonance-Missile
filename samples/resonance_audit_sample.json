@@ -1,0 +1,165 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-07-02T10:30:00Z",
+  "file": "contract_agreement_2026.pdf",
+  "paradox_safeguard": {
+    "declaration": "工具理性悖论防护已内置",
+    "principle": "instrumental_paradox (luoxuejian000, 2026)",
+    "mechanisms": [
+      "human_review_required_for_critical_findings",
+      "auto_execute_permanently_disabled (MAX_AUTO_FIX_ATTEMPTS=0)",
+      "contradiction_escalation_instead_of_suppression",
+      "tat_consensus_subject_to_field_validation",
+      "global_health_self_check_with_human_decision",
+      "configurable_thresholds_with_audit_trail"
+    ],
+    "disclaimer": "此诊断仅供人类参考，任何恢复操作必须由人类显式触发"
+  },
+  "global_snapshot": {
+    "U": 0.65,
+    "D": 0.72,
+    "A": 0.38,
+    "H": 0.58,
+    "H_driven_by": "U",
+    "timestamp": "2026-07-02T10:30:00Z"
+  },
+  "agents": [
+    {
+      "agent_id": "audit_001",
+      "agent_type": "code_audit",
+      "status": "completed",
+      "findings": [
+        {
+          "type": "contract_conflict",
+          "severity": "high",
+          "line": 37,
+          "content": "付款期限30日与45日存在矛盾",
+          "pattern": "payment_term_conflict",
+          "confidence": 0.92,
+          "evidence": "第二条第37行约定30日内付款，第三条第40行约定付款期限不得超过45天"
+        },
+        {
+          "type": "contract_conflict",
+          "severity": "medium",
+          "line": 48,
+          "content": "履约保证金0元与可扣罚条款矛盾",
+          "pattern": "performance_bond_conflict",
+          "confidence": 0.85,
+          "evidence": "第五条约定履约保证金为0元，但后续条款提到可扣罚保证金"
+        }
+      ],
+      "confidence": 0.88,
+      "contradiction_detected": true,
+      "field_state": {
+        "u": 0.55,
+        "d": 0.70,
+        "a": 0.45,
+        "h": 0.52
+      }
+    },
+    {
+      "agent_id": "verify_001",
+      "agent_type": "verify",
+      "status": "completed",
+      "verified_findings": [
+        {
+          "type": "contract_conflict",
+          "line": 37,
+          "verified": true,
+          "verification_method": "semantic_analysis",
+          "confidence": 0.95
+        },
+        {
+          "type": "contract_conflict",
+          "line": 48,
+          "verified": false,
+          "verification_method": "semantic_analysis",
+          "confidence": 0.45,
+          "rejection_reason": "0元保证金为特殊条款，不影响扣罚约定的法律效力"
+        }
+      ],
+      "confidence": 0.70,
+      "contradiction_detected": true,
+      "field_state": {
+        "u": 0.72,
+        "d": 0.75,
+        "a": 0.32,
+        "h": 0.65
+      },
+      "misclassification_recorded": true
+    },
+    {
+      "agent_id": "knowledge_001",
+      "agent_type": "knowledge_graph",
+      "status": "completed",
+      "remediation_suggestions": [
+        {
+          "conflict_id": "conflict_001",
+          "suggestion": "统一付款期限为45天，明确逾期违约责任",
+          "priority": 1,
+          "reference": "《民法典》第510条关于合同约定不明的处理"
+        },
+        {
+          "conflict_id": "conflict_002",
+          "suggestion": "明确履约保证金金额或删除扣罚条款",
+          "priority": 2,
+          "reference": "建设工程施工合同示范文本通用条款"
+        }
+      ],
+      "confidence": 0.80,
+      "field_state": {
+        "u": 0.68,
+        "d": 0.78,
+        "a": 0.28,
+        "h": 0.62
+      }
+    }
+  ],
+  "mediation_result": {
+    "resolved": true,
+    "method": "second_auditor_agreed",
+    "rounds": 1,
+    "requires_human_review": false
+  },
+  "tuning_suggestions": [
+    {
+      "action": "increase_verify_weight",
+      "suggested_value": 1.5,
+      "reason": "H=0.58 低于阈值0.6，建议提升验证Agent权重",
+      "requires_human_approval": true,
+      "cooldown_applied": false
+    }
+  ],
+  "audit_trail": [
+    {
+      "timestamp": "2026-07-02T10:25:00Z",
+      "action": "REGISTER_AGENT",
+      "agent_id": "audit_001",
+      "agent_type": "code_audit"
+    },
+    {
+      "timestamp": "2026-07-02T10:26:00Z",
+      "action": "AUDIT_START",
+      "file": "contract_agreement_2026.pdf"
+    },
+    {
+      "timestamp": "2026-07-02T10:28:00Z",
+      "action": "UPDATE_HOTNESS",
+      "pattern": "payment_term_conflict",
+      "hits": 1,
+      "scans": 3
+    },
+    {
+      "timestamp": "2026-07-02T10:29:00Z",
+      "action": "REGISTER_AGENT",
+      "agent_id": "verify_001",
+      "agent_type": "verify"
+    },
+    {
+      "timestamp": "2026-07-02T10:30:00Z",
+      "action": "AUDIT_COMPLETE",
+      "findings_count": 2,
+      "verified_count": 1
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  hub:
+    build: .
+    command: python -c "from hub import start_hub; start_hub()"
+    ports:
+      - "8000:8000"
+    environment:
+      - HUB_HOST=0.0.0.0
+      - HUB_PORT=8000
+    networks:
+      - resonance-net
+
+  orchestrator:
+    build: .
+    command: python -c "
+import asyncio
+from agents.scheduler import Orchestrator
+async def main():
+    orch = Orchestrator()
+    await orch.run()
+asyncio.run(main())
+"
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+      - HUB_PORT=8000
+    networks:
+      - resonance-net
+
+  code_audit_1:
+    build: .
+    command: python -c "
+import asyncio
+from agents.code_audit_agent import CodeAuditAgent
+async def main():
+    agent = CodeAuditAgent('code_audit_docker_1')
+    await agent.run()
+asyncio.run(main())
+"
+    depends_on:
+      - hub
+    networks:
+      - resonance-net
+
+  verify_1:
+    build: .
+    command: python -c "
+import asyncio
+from agents.verify_agent import VerifyAgent
+async def main():
+    agent = VerifyAgent('verify_docker_1')
+    await agent.run()
+asyncio.run(main())
+"
+    depends_on:
+      - hub
+    networks:
+      - resonance-net
+
+  dashboard:
+    build: .
+    command: python -c "
+import uvicorn
+from dashboard.api import app
+uvicorn.run(app, host='0.0.0.0', port=8001)
+"
+    ports:
+      - "8001:8001"
+    depends_on:
+      - hub
+    networks:
+      - resonance-net
+
+networks:
+  resonance-net:
+    driver: bridge

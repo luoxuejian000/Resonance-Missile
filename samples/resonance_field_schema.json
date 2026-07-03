@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/luoxuejian000/Resonance-Missile/schemas/resonance_field_schema.json",
+  "title": "Resonance-Missile Field Trajectory Schema",
+  "description": "场域轨迹数据格式规范 - 工具理性悖论防护已内置",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "数据格式版本号",
+      "const": "1.0"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "元数据信息",
+      "properties": {
+        "dataset_name": {
+          "type": "string",
+          "description": "数据集名称"
+        },
+        "description": {
+          "type": "string",
+          "description": "数据集描述"
+        },
+        "total_steps": {
+          "type": "integer",
+          "description": "总采样步数",
+          "minimum": 1
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间"
+        },
+        "source": {
+          "type": "string",
+          "description": "数据来源"
+        },
+        "paradox_safeguard": {
+          "type": "string",
+          "const": "instrumental_paradox_protection_enabled",
+          "description": "工具理性悖论防护已内置"
+        }
+      },
+      "required": ["dataset_name", "total_steps", "created_at", "paradox_safeguard"]
+    },
+    "trajectory": {
+      "type": "array",
+      "description": "场域轨迹数据（按时间步序排列）",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "integer",
+            "description": "采样步数，从1开始递增",
+            "minimum": 1
+          },
+          "char_pos": {
+            "type": "integer",
+            "description": "当前处理到的字符位置（文本流中的偏移量）",
+            "minimum": 0
+          },
+          "U": {
+            "type": "number",
+            "description": "统一性 (Unity) - 场域内各智能体观点的一致性程度",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "D": {
+            "type": "number",
+            "description": "发展性 (Development) - 场域知识增长和演化的速度",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "A": {
+            "type": "number",
+            "description": "对抗性 (Adversariality) - 智能体间矛盾和分歧的程度",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "H": {
+            "type": "number",
+            "description": "和谐度 (Harmony) - 场域整体健康度，综合评估指标",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+          "U_diff": {
+            "type": "number",
+            "description": "统一性变化量，与前一步相比的差值"
+          },
+          "D_diff": {
+            "type": "number",
+            "description": "发展性变化量，与前一步相比的差值"
+          },
+          "A_diff": {
+            "type": "number",
+            "description": "对抗性变化量，与前一步相比的差值"
+          },
+          "H_diff": {
+            "type": "number",
+            "description": "和谐度变化量，与前一步相比的差值"
+          },
+          "H_driven_by": {
+            "type": "string",
+            "description": "主导驱动维度，决定当前和谐度变化的主要因素",
+            "enum": ["U", "D", "A", "均衡"]
+          },
+          "cumul_A": {
+            "type": "number",
+            "description": "对抗性累积量，从第一步到当前步的A值累积和",
+            "minimum": 0.0
+          },
+          "D_volatility": {
+            "type": "number",
+            "description": "发展性波动率，衡量D值变化的剧烈程度",
+            "minimum": 0.0
+          }
+        },
+        "required": ["step", "char_pos", "U", "D", "A", "H"]
+      }
+    }
+  },
+  "required": ["version", "metadata", "trajectory"]
+}
